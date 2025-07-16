@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <TextView
+        android:id="@+id/textViewTransactionType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Type: Deposit"
+        android:textStyle="bold"
+        android:textSize="16sp"/>
+
+    <TextView
+        android:id="@+id/textViewTransactionAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Amount: $100.00"
+        android:textSize="14sp"/>
+
+    <TextView
+        android:id="@+id/textViewTransactionNewBalance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Balance: $1100.00"
+        android:textSize="14sp"/>
+
+    <TextView
+        android:id="@+id/textViewTransactionTimestamp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Date: 2024-07-16 12:00:00"
+        android:textSize="12sp"
+        android:textColor="@android:color/darker_gray"/>
+
+</LinearLayout>

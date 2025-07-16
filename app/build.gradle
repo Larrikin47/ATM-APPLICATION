@@ -1,0 +1,47 @@
+// app/build.gradle (Module: app)
+
+plugins {
+    id 'com.android.application'
+    // id 'org.jetbrains.kotlin.android' // If you're using Kotlin, keep this
+}
+
+android {
+    // THIS IS VERY IMPORTANT! Make sure it matches your Java package structure
+    namespace 'com.example.atmapp' // Ensure this is 'com.example.atmapp'
+
+    compileSdk 34 // Or your target SDK version
+
+    defaultConfig {
+        // THIS IS ALSO VERY IMPORTANT! Make sure it matches your Java package structure
+        applicationId "com.example.atmapp" // Ensure this is "com.example.atmapp"
+        minSdk 26 // Or your desired min SDK
+        targetSdk 34 // Or your target SDK version
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    // If you're using Java 11 or higher, you might need this:
+    // kotlinOptions {
+    //     jvmTarget = '11'
+    // }
+}
+
+dependencies {
+    // Ensure these are present and up-to-date
+    implementation 'androidx.appcompat:appcompat:1.6.1' // Latest stable version
+    implementation 'com.google.android.material:material:1.12.0' // Latest stable version
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4' // Common dependency
+    // ... other dependencies
+}

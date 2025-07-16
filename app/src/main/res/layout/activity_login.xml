@@ -1,0 +1,41 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".activities.LoginActivity">
+
+    <TextView
+        android:id="@+id/welcomeMessageTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/welcome_message"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"/>
+
+    <EditText
+        android:id="@+id/editTextUsername" android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/username_hint"
+        android:inputType="text"
+        android:layout_below="@id/welcomeMessageTextView"
+        android:layout_marginTop="30dp"/>
+
+    <EditText
+        android:id="@+id/editTextPin" android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/pin_hint"
+        android:inputType="numberPassword"
+        android:layout_below="@id/editTextUsername"
+        android:layout_marginTop="10dp"/>
+
+    <Button
+        android:id="@+id/buttonLogin" android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/login_button"
+        android:layout_below="@id/editTextPin"
+        android:layout_marginTop="20dp"/>
+
+</RelativeLayout>
