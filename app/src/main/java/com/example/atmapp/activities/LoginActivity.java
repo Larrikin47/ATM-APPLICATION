@@ -22,8 +22,6 @@ public class LoginActivity extends AppCompatActivity {
     private Button buttonLogin;
 
     private BankService bankService;
-    // SessionManager is now purely static, no need for an instance field
-    // private SessionManager sessionManager; // Remove this line if it exists
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,8 +32,7 @@ public class LoginActivity extends AppCompatActivity {
         editTextPin = findViewById(R.id.editTextPin);
         buttonLogin = findViewById(R.id.buttonLogin);
 
-        bankService = new BankService(); // Corrected: Direct instantiation
-        // sessionManager = SessionManager.getInstance(); // Removed: SessionManager is static
+        bankService = new BankService();
 
         buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,16 +54,14 @@ public class LoginActivity extends AppCompatActivity {
         User user = bankService.authenticateUser(username, pin);
 
         if (user != null) {
-            // Corrected: Use user.getUsername()
-            Account account = bankService.getAccount(user.getAccountNumber()); // Assuming User stores account number
+            Account account = bankService.getAccount(user.getAccountNumber());
 
             if (account != null) {
-                // Corrected: Use SessionManager.login()
                 SessionManager.login(user, account);
                 Toast.makeText(this, "Login Successful!", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                 startActivity(intent);
-                finish(); // Close LoginActivity so user can't go back with back button
+                finish();
             } else {
                 Toast.makeText(this, "Account not found for this user.", Toast.LENGTH_SHORT).show();
             }

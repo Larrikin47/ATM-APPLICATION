@@ -2,8 +2,8 @@ package com.example.atmapp.models;
 
 public class User {
     private String username;
-    private String pin; // In a real app, this would be securely hashed!
-    private String accountNumber; // Link to the user's account
+    private String pin;
+    private String accountNumber;
 
     public User(String username, String pin, String accountNumber) {
         this.username = username;
@@ -22,6 +22,4 @@ public class User {
     public String getAccountNumber() {
         return accountNumber;
     }
-
-    // For simplicity, we'll keep setters limited, or not include them if not needed
 }

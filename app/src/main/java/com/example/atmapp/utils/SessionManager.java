@@ -7,7 +7,6 @@ public class SessionManager {
     private static User currentUser;
     private static Account currentAccount;
 
-    // All methods are static, no getInstance() needed
     public static void login(User user, Account account) {
         currentUser = user;
         currentAccount = account;

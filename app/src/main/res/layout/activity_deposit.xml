@@ -1,45 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center_horizontal"
+    android:gravity="center"
     android:padding="16dp"
     tools:context=".activities.DepositActivity">
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Deposit Funds"
-        android:textSize="28sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="48dp"/>
 
     <TextView
         android:id="@+id/textViewCurrentBalanceDeposit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Current Balance: $0.00"
-        android:textSize="20sp"
-        android:layout_marginBottom="24dp"/>
+        android:text="@string/current_balance"
+        android:textSize="18sp"
+        android:layout_marginBottom="20dp"/>
 
     <EditText
         android:id="@+id/editTextDepositAmount"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter amount to deposit"
+        android:hint="@string/enter_deposit_amount"
         android:inputType="numberDecimal"
-        android:padding="12dp"
-        android:layout_marginBottom="24dp"/>
+        android:minHeight="48dp"
+        android:layout_marginBottom="20dp"/>
 
     <Button
         android:id="@+id/buttonConfirmDeposit"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Confirm Deposit"
-        android:padding="12dp"
-        android:backgroundTint="@color/colorPrimary"/>
+        android:text="@string/confirm_deposit"/>
+
+    <Button
+        android:id="@+id/buttonBackToMainFromDeposit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/back_to_main"
+        android:layout_marginTop="10dp"/>
 
 </LinearLayout>

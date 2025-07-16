@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -16,23 +17,28 @@
         android:layout_marginTop="50dp"/>
 
     <EditText
-        android:id="@+id/editTextUsername" android:layout_width="match_parent"
+        android:id="@+id/editTextUsername"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/username_hint"
         android:inputType="text"
         android:layout_below="@id/welcomeMessageTextView"
-        android:layout_marginTop="30dp"/>
+        android:layout_marginTop="30dp"
+        android:minHeight="48dp" />
 
     <EditText
-        android:id="@+id/editTextPin" android:layout_width="match_parent"
+        android:id="@+id/editTextPin"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/pin_hint"
         android:inputType="numberPassword"
         android:layout_below="@id/editTextUsername"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="10dp"
+        android:minHeight="48dp" />
 
     <Button
-        android:id="@+id/buttonLogin" android:layout_width="match_parent"
+        android:id="@+id/buttonLogin"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/login_button"
         android:layout_below="@id/editTextPin"

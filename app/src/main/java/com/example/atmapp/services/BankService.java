@@ -23,7 +23,6 @@ public class BankService {
         users.put(user1.getUsername(), user1);
         users.put(user2.getUsername(), user2);
 
-        // Corrected: Account constructor call (String, double)
         accounts.put("ACC001", new Account("ACC001", 1000.00));
         accounts.put("ACC002", new Account("ACC002", 500.00));
     }
@@ -37,7 +36,7 @@ public class BankService {
         if (user != null && user.getPin().equals(pin)) {
             return user;
         }
-        return null; // Authentication failed
+        return null;
     }
 
     public Account getAccount(String accountNumber) {
@@ -46,7 +45,6 @@ public class BankService {
 
     public boolean deposit(Account account, double amount) {
         if (account != null && amount > 0) {
-            // Corrected: account.deposit() method is now available
             account.deposit(amount);
             addTransaction(account.getAccountNumber(), "Deposit", amount, account.getBalance());
             return true;
@@ -55,7 +53,6 @@ public class BankService {
     }
 
     public boolean withdraw(Account account, double amount) {
-        // Corrected: account.withdraw() method is now available
         if (account != null && account.withdraw(amount)) {
             addTransaction(account.getAccountNumber(), "Withdrawal", amount, account.getBalance());
             return true;
@@ -68,11 +65,10 @@ public class BankService {
             addTransaction(account.getAccountNumber(), "Balance Inquiry", 0.0, account.getBalance());
             return account.getBalance();
         }
-        return -1.0; // Indicate error
+        return -1.0;
     }
 
     private void addTransaction(String accountNumber, String type, double amount, double newBalance) {
-        // Corrected: Transaction constructor call now matches the updated Transaction class
         Transaction transaction = new Transaction(accountNumber, type, amount, newBalance);
         if (!transactionHistory.containsKey(accountNumber)) {
             transactionHistory.put(accountNumber, new ArrayList<>());

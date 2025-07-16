@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,7 +9,8 @@
     tools:context=".activities.MainActivity">
 
     <TextView
-        android:id="@+id/welcomeTextView" android:layout_width="wrap_content"
+        android:id="@+id/welcomeTextView"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Welcome!"
         android:textSize="24sp"
@@ -17,31 +19,36 @@
         android:layout_marginBottom="30dp"/>
 
     <Button
-        android:id="@+id/buttonDeposit" android:layout_width="match_parent"
+        android:id="@+id/buttonDeposit"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/deposit_button"
         android:layout_marginBottom="10dp"/>
 
     <Button
-        android:id="@+id/buttonWithdrawal" android:layout_width="match_parent"
+        android:id="@+id/buttonWithdrawal"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/withdrawal_button"
         android:layout_marginBottom="10dp"/>
 
     <Button
-        android:id="@+id/buttonBalanceInquiry" android:layout_width="match_parent"
+        android:id="@+id/buttonBalanceInquiry"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/balance_inquiry_button"
         android:layout_marginBottom="10dp"/>
 
     <Button
-        android:id="@+id/buttonTransactionHistory" android:layout_width="match_parent"
+        android:id="@+id/buttonTransactionHistory"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/transaction_history_button"
         android:layout_marginBottom="30dp"/>
 
     <Button
-        android:id="@+id/buttonLogout" android:layout_width="match_parent"
+        android:id="@+id/buttonLogout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/logout_button"/>
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">ATMApp</string>
+    <string name="app_name">ATM App</string>
     <string name="welcome_message">Welcome to ATM</string>
     <string name="username_hint">Username</string>
     <string name="pin_hint">PIN</string>
@@ -10,10 +10,10 @@
     <string name="balance_inquiry_button">Balance Inquiry</string>
     <string name="transaction_history_button">Transaction History</string>
     <string name="logout_button">Logout</string>
-    <string name="deposit_amount_hint">Enter amount to deposit</string>
-    <string name="confirm_deposit_button">Confirm Deposit</string>
-    <string name="withdrawal_amount_hint">Enter amount to withdraw</string>
-    <string name="confirm_withdrawal_button">Confirm Withdrawal</string>
-    <string name="current_balance_text">Current Balance: $%.2f</string>
-    <string name="back_to_main_menu">Back to Main Menu</string>
+    <string name="enter_deposit_amount">Enter deposit amount</string>
+    <string name="confirm_deposit">Confirm Deposit</string>
+    <string name="current_balance">Current Balance: $%.2f</string>
+    <string name="enter_withdrawal_amount">Enter withdrawal amount</string>
+    <string name="confirm_withdrawal">Confirm Withdrawal</string>
+    <string name="back_to_main">Back to Main</string>
 </resources>

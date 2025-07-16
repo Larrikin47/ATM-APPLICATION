@@ -21,7 +21,8 @@ public class WithdrawalActivity extends AppCompatActivity {
     private EditText editTextWithdrawalAmount;
     private Button buttonConfirmWithdrawal;
     private TextView textViewCurrentBalanceWithdrawal;
-    private BankService bankService; // This will now correctly instantiate
+    private Button buttonBackToMainFromWithdrawal; // Added
+    private BankService bankService;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +32,8 @@ public class WithdrawalActivity extends AppCompatActivity {
         editTextWithdrawalAmount = findViewById(R.id.editTextWithdrawalAmount);
         buttonConfirmWithdrawal = findViewById(R.id.buttonConfirmWithdrawal);
         textViewCurrentBalanceWithdrawal = findViewById(R.id.textViewCurrentBalanceWithdrawal);
-        bankService = new BankService(); // Corrected by making BankService() public
+        buttonBackToMainFromWithdrawal = findViewById(R.id.buttonBackToMainFromWithdrawal); // Initialized
+        bankService = new BankService();
 
         updateBalanceDisplay();
 
@@ -41,12 +43,21 @@ public class WithdrawalActivity extends AppCompatActivity {
                 performWithdrawal();
             }
         });
+
+        buttonBackToMainFromWithdrawal.setOnClickListener(new View.OnClickListener() { // Listener for new button
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 
     private void updateBalanceDisplay() {
         Account currentAccount = SessionManager.getCurrentAccount();
         if (currentAccount != null) {
             textViewCurrentBalanceWithdrawal.setText(String.format(Locale.getDefault(), "Current Balance: $%.2f", currentAccount.getBalance()));
+        } else {
+            textViewCurrentBalanceWithdrawal.setText("Current Balance: N/A");
         }
     }
 
@@ -72,14 +83,14 @@ public class WithdrawalActivity extends AppCompatActivity {
 
             if (bankService.withdraw(currentAccount, amount)) {
                 Toast.makeText(this, String.format(Locale.getDefault(), "Successfully withdrew $%.2f", amount), Toast.LENGTH_LONG).show();
-                updateBalanceDisplay(); // Update balance display after successful withdrawal
-                editTextWithdrawalAmount.setText(""); // Clear the input field
+                updateBalanceDisplay();
+                editTextWithdrawalAmount.setText("");
             } else {
                 Toast.makeText(this, "Withdrawal failed. Please try again.", Toast.LENGTH_SHORT).show();
             }
         } else {
             Toast.makeText(this, "Account not found. Please log in again.", Toast.LENGTH_LONG).show();
-            finish(); // Go back to previous activity or login
+            finish();
         }
     }
 }

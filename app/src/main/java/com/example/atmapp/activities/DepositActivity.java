@@ -21,7 +21,8 @@ public class DepositActivity extends AppCompatActivity {
     private EditText editTextDepositAmount;
     private Button buttonConfirmDeposit;
     private TextView textViewCurrentBalanceDeposit;
-    private BankService bankService; // This will now correctly instantiate
+    private Button buttonBackToMainFromDeposit; // Added
+    private BankService bankService;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +32,8 @@ public class DepositActivity extends AppCompatActivity {
         editTextDepositAmount = findViewById(R.id.editTextDepositAmount);
         buttonConfirmDeposit = findViewById(R.id.buttonConfirmDeposit);
         textViewCurrentBalanceDeposit = findViewById(R.id.textViewCurrentBalanceDeposit);
-        bankService = new BankService(); // Corrected by making BankService() public
+        buttonBackToMainFromDeposit = findViewById(R.id.buttonBackToMainFromDeposit); // Initialized
+        bankService = new BankService();
 
         updateBalanceDisplay();
 
@@ -41,12 +43,21 @@ public class DepositActivity extends AppCompatActivity {
                 performDeposit();
             }
         });
+
+        buttonBackToMainFromDeposit.setOnClickListener(new View.OnClickListener() { // Listener for new button
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 
     private void updateBalanceDisplay() {
         Account currentAccount = SessionManager.getCurrentAccount();
         if (currentAccount != null) {
             textViewCurrentBalanceDeposit.setText(String.format(Locale.getDefault(), "Current Balance: $%.2f", currentAccount.getBalance()));
+        } else {
+            textViewCurrentBalanceDeposit.setText("Current Balance: N/A");
         }
     }
 
@@ -68,14 +79,14 @@ public class DepositActivity extends AppCompatActivity {
 
             if (bankService.deposit(currentAccount, amount)) {
                 Toast.makeText(this, String.format(Locale.getDefault(), "Successfully deposited $%.2f", amount), Toast.LENGTH_LONG).show();
-                updateBalanceDisplay(); // Update balance display after successful deposit
-                editTextDepositAmount.setText(""); // Clear the input field
+                updateBalanceDisplay();
+                editTextDepositAmount.setText("");
             } else {
                 Toast.makeText(this, "Deposit failed. Please try again.", Toast.LENGTH_SHORT).show();
             }
         } else {
             Toast.makeText(this, "Account not found. Please log in again.", Toast.LENGTH_LONG).show();
-            finish(); // Go back to previous activity or login
+            finish();
         }
     }
 }

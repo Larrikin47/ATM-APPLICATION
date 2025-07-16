@@ -4,7 +4,6 @@ public class Account {
     private String accountNumber;
     private double balance;
 
-    // Corrected constructor to match usage (String, double)
     public Account(String accountNumber, double balance) {
         this.accountNumber = accountNumber;
         this.balance = balance;
@@ -22,14 +21,12 @@ public class Account {
         this.balance = balance;
     }
 
-    // Added deposit method
     public void deposit(double amount) {
         if (amount > 0) {
             this.balance += amount;
         }
     }
 
-    // Added withdraw method
     public boolean withdraw(double amount) {
         if (amount > 0 && this.balance >= amount) {
             this.balance -= amount;
