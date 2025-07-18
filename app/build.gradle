@@ -14,7 +14,7 @@ android {
     defaultConfig {
         // THIS IS ALSO VERY IMPORTANT! Make sure it matches your Java package structure
         applicationId "com.example.atmapp" // Ensure this is "com.example.atmapp"
-        minSdk 26 // Or your desired min SDK
+        minSdk 29 // Or your desired min SDK
         targetSdk 34 // Or your target SDK version
         versionCode 1
         versionName "1.0"
