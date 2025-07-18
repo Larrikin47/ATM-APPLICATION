@@ -45,7 +45,7 @@ public class BalanceInquiryActivity extends AppCompatActivity {
         if (currentAccount != null) {
             double balance = bankService.getBalance(currentAccount);
             if (balance != -1.0) {
-                textViewDisplayBalance.setText(String.format(Locale.getDefault(), "$%.2f", balance));
+                textViewDisplayBalance.setText(String.format(Locale.getDefault(), "KSH:%.2f", balance));
             } else {
                 Toast.makeText(this, "Could not retrieve balance. Please try again.", Toast.LENGTH_SHORT).show();
                 textViewDisplayBalance.setText("$Error");

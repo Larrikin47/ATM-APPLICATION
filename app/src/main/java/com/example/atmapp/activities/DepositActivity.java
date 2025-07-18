@@ -55,7 +55,7 @@ public class DepositActivity extends AppCompatActivity {
     private void updateBalanceDisplay() {
         Account currentAccount = SessionManager.getCurrentAccount();
         if (currentAccount != null) {
-            textViewCurrentBalanceDeposit.setText(String.format(Locale.getDefault(), "Current Balance: $%.2f", currentAccount.getBalance()));
+            textViewCurrentBalanceDeposit.setText(String.format(Locale.getDefault(), "Current Balance: Ksh:%.2f", currentAccount.getBalance()));
         } else {
             textViewCurrentBalanceDeposit.setText("Current Balance: N/A");
         }
@@ -78,7 +78,7 @@ public class DepositActivity extends AppCompatActivity {
             }
 
             if (bankService.deposit(currentAccount, amount)) {
-                Toast.makeText(this, String.format(Locale.getDefault(), "Successfully deposited $%.2f", amount), Toast.LENGTH_LONG).show();
+                Toast.makeText(this, String.format(Locale.getDefault(), "Successfully deposited KSH:%.2f", amount), Toast.LENGTH_LONG).show();
                 updateBalanceDisplay();
                 editTextDepositAmount.setText("");
             } else {

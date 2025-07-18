@@ -17,14 +17,34 @@ public class BankService {
 
     static {
         // Initialize some dummy data
-        User user1 = new User("user123", "1234", "ACC001");
-        User user2 = new User("testuser", "5678", "ACC002");
+        User user1 = new User("ABDIKADIR BONAYA", "1234", "ACC001");
+        User user2 = new User("ANNRITA WAMBUI", "1234", "ACC002");
+        User user3 = new User("MOHAMED MUKHTAR", "1234", "ACC003");
+        User user4 = new User("ANNAH MAKIO", "1234", "ACC004");
+        User user5 = new User("ABDISAMAD ABDI", "1234", "ACC005");
+        User user6 = new User("NGETICH ENOCK", "1234", "ACC006");
+        User user7 = new User("CHRISTINE ADHIAMBO", "1234", "ACC007");
+        User user8 = new User("testUser", "1234", "ACC008");
 
         users.put(user1.getUsername(), user1);
         users.put(user2.getUsername(), user2);
+        users.put(user3.getUsername(), user3);
+        users.put(user4.getUsername(), user4);
+        users.put(user5.getUsername(), user5);
+        users.put(user6.getUsername(), user6);
+        users.put(user7.getUsername(), user7);
+        users.put(user8.getUsername(), user8);
 
-        accounts.put("ACC001", new Account("ACC001", 1000.00));
-        accounts.put("ACC002", new Account("ACC002", 500.00));
+        accounts.put("ACC001", new Account("ACC001", 14000.00));
+        accounts.put("ACC002", new Account("ACC002", 1100.00));
+        accounts.put("ACC003", new Account("ACC003", 8000.00));
+        accounts.put("ACC004", new Account("ACC004", 6500.00));
+        accounts.put("ACC005", new Account("ACC005", 7600.00));
+        accounts.put("ACC006", new Account("ACC006", 12000.00));
+        accounts.put("ACC007", new Account("ACC007", 52800.00));
+        accounts.put("ACC008", new Account("ACC008", 1000.00));
+
+
     }
 
     public BankService() {

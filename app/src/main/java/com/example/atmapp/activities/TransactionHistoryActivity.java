@@ -60,8 +60,8 @@ public class TransactionHistoryActivity extends AppCompatActivity {
                 adapter.add(
                         String.format(Locale.getDefault(), "Type: %s\n", t.getTypeString()) +
                                 (t.getType() == Transaction.TransactionType.DEPOSIT || t.getType() == Transaction.TransactionType.WITHDRAWAL ?
-                                        String.format(Locale.getDefault(), "Amount: $%.2f\n", t.getAmount()) : "") +
-                                String.format(Locale.getDefault(), "New Balance: $%.2f\n", t.getNewBalance()) +
+                                        String.format(Locale.getDefault(), "Amount: KSH:%.2f\n", t.getAmount()) : "") +
+                                String.format(Locale.getDefault(), "New Balance: KSH:%.2f\n", t.getNewBalance()) +
                                 String.format(Locale.getDefault(), "Date: %s", t.getFormattedTimestamp())
                 );
             }

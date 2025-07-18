@@ -55,7 +55,7 @@ public class WithdrawalActivity extends AppCompatActivity {
     private void updateBalanceDisplay() {
         Account currentAccount = SessionManager.getCurrentAccount();
         if (currentAccount != null) {
-            textViewCurrentBalanceWithdrawal.setText(String.format(Locale.getDefault(), "Current Balance: $%.2f", currentAccount.getBalance()));
+            textViewCurrentBalanceWithdrawal.setText(String.format(Locale.getDefault(), "Current Balance: KSH:%.2f", currentAccount.getBalance()));
         } else {
             textViewCurrentBalanceWithdrawal.setText("Current Balance: N/A");
         }
@@ -82,7 +82,7 @@ public class WithdrawalActivity extends AppCompatActivity {
             }
 
             if (bankService.withdraw(currentAccount, amount)) {
-                Toast.makeText(this, String.format(Locale.getDefault(), "Successfully withdrew $%.2f", amount), Toast.LENGTH_LONG).show();
+                Toast.makeText(this, String.format(Locale.getDefault(), "Successfully withdrew KSH:%.2f", amount), Toast.LENGTH_LONG).show();
                 updateBalanceDisplay();
                 editTextWithdrawalAmount.setText("");
             } else {
