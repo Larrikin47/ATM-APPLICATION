@@ -24,10 +24,15 @@
         android:layout_marginBottom="16dp"/>
 
     <Button
-        android:id="@+id/buttonBackToMainFromHistory"
-        android:layout_width="wrap_content"
+        android:id="@+id/buttonGetReceipt"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/back_to_main"
-        android:layout_gravity="center_horizontal"/>
+        android:text="Get Receipt"
+        android:layout_marginBottom="8dp"/> <Button
+    android:id="@+id/buttonBackToMainFromHistory"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/back_to_main"
+    android:layout_gravity="center_horizontal"/>
 
 </LinearLayout>
